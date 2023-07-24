@@ -14,3 +14,6 @@ Run postgress docker
 
 ## Grafana 
 see grafana/readme.md
+
+https://github.com/dolfno/beerchat/assets/65344169/af10bf30-1269-47dc-bdd6-070c2c1ef0f0
+
