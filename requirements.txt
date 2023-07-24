@@ -1,0 +1,10 @@
+python-dotenv
+ipykernel
+faiss-cpu
+langchain
+unstructured
+openai
+tiktoken
+psycopg2-binary
+Flask
+flask-cors

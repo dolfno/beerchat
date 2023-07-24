@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  flyway-reporting:
+    image: flyway/flyway
+    command: -schemas=reporting -url=jdbc:postgresql://postgres/reporting -user=root -password=test -connectRetries=60 -placeholderReplacement=true -placeholders.AURORA_API_RO_PASSWORD=password -placeholders.AURORA_CBSERVICES_PASSWORD=password -placeholders.AURORA_ETL_RW_PASSWORD=password -placeholders.GRAFANA_PASSWORD=password migrate
+    volumes:
+      - ./:/flyway/sql
+    depends_on:
+      - postgres
+  postgres:
+    image: postgres:14-alpine
+    environment:
+      POSTGRES_DB: "reporting"
+      POSTGRES_PASSWORD: "test"
+      POSTGRES_USER: "root"
+    ports:
+      - "5432:5432"
